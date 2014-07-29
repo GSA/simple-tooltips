@@ -339,7 +339,9 @@ class simple_tooltips {
 		if (!is_admin()) {
 			wp_enqueue_script('simple_tooltips_base', plugins_url( 'zebra_tooltips.js' , __FILE__ ), array('jquery'), false, true);
 			wp_enqueue_style('simple_tooltips_style', plugins_url( 'zebra_tooltips.css' , __FILE__ ));
-			add_action('wp_footer', array($this, 'tooltip_data'), 100);
+			// todo: fix the underlying issue 
+			// this breaks popus, quick fix = comment out
+			// add_action('wp_footer', array($this, 'tooltip_data'), 100);
 		}
 	} 
 	
